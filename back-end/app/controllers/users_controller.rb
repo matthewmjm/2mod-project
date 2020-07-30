@@ -6,14 +6,14 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find(params[:id])
+        @user = User.find(params["id"])
         render json: @user, include: [:songs]
     end 
     
     def create
         @user = User.create(
-            user_name: params[:user_name],
-            user_password: params[:user_password]
+            user_name: params["user_name"],
+            user_password: params["user_password"]
         )
         render json: @user
     end 
