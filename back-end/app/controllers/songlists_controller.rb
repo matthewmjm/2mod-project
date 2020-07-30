@@ -6,15 +6,15 @@ class SonglistsController < ApplicationController
     end
 
     def show
-        @songlist = Songlist.find(params[:id])
+        @songlist = Songlist.find(params["id"])
         render json: @songlist
     end 
     
     def create
         @songlist = Songlist.create(
-            list_name: params[:list_name],
-            user_id: params[:user_id],
-            song_id: params[:song_id]
+            list_name: params["list_name"],
+            user_id: params["user_id"],
+            song_id: params["song_id"]
         )
         render json: @songlist
     end 
