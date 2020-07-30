@@ -2,8 +2,8 @@ const searchParams = new URLSearchParams(window.location.search)
 const id = searchParams.get('id')
 
 fetch(`https://deezerdevs-deezer.p.rapidapi.com/track/${id}`, {
-    "method": "GET",
-    "headers": {
+    method: 'GET',
+    headers: {
         "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
         "x-rapidapi-key": "44ef2a222amshf93b43e1eddc982p14611djsn4704c9571d3a"
     }

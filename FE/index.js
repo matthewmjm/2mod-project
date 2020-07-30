@@ -18,7 +18,7 @@ function dataHandler(tracks) {
 					<img src="${track.album.cover_medium}" class="card-img-top" alt="album cover">
 						<div class="card-body">
 							
-							
+							<h6 class="card-title">${track.title}</h6>
 							<a href="show.html?id=${track.id}" class="btn btn-primary">Song Info</a>
 							<a href="albumshow.html?id=${track.album.id}" class="btn btn-primary">Album Info</a>
 						</div>

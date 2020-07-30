@@ -12,12 +12,6 @@ fetch(`https://deezerdevs-deezer.p.rapidapi.com/album/${id}`, {
     .then(result => renderAlbum(result))
 
 function renderAlbum(album) {
-    // const trackTitle = document.getElementById('track-title')
-    // trackTitle.innerText = track.album.title
-
-    // const preview = document.getElementById('track-preview')
-    // preview.setAttribute('src', track.preview)
-    // document.body.append(trackTitle, preview)
     const albumTitle = document.getElementById('album-title')
     albumTitle.innerText = `Album: ${album.title}`
     albumTitle.style.color = "white"
