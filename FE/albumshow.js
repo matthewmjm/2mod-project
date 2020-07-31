@@ -14,11 +14,11 @@ fetch(`https://deezerdevs-deezer.p.rapidapi.com/album/${id}`, {
 function renderAlbum(album) {
     const albumTitle = document.getElementById('album-title')
     albumTitle.innerText = `Album: ${album.title}`
-    albumTitle.style.color = "white"
+    albumTitle.style.color = "orangered"
 
     const albumReleaseDate = document.getElementById('release-date')
     albumReleaseDate.innerText = `Release Date: ${album.release_date}`
-    albumReleaseDate.style.color = "white"
+    albumReleaseDate.style.color = "orange"
 
     const coverArt = document.getElementById('album-cover')
     coverArt.setAttribute('src', album.cover_big)

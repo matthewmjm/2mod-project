@@ -14,32 +14,55 @@
             background-size: cover;
             background-attachment: fixed;
         }
+
+        .username {
+            font-size: 1.5em;
+        }
     </style>
+
 </head>
 
 <body>
     <header>
+        <!-- <nav class="navbar navbar-light bg-light">
+            <input id="artist" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-secondary my-2 my-sm-0 mr-auto" type="submit">Search</button>
+            <button type="button" class="btn btn-primary mr-auto" data-toggle="modal"
+            data-target="#exampleModalLong">
+            My Favorites
+        </button>
+    </form>
+</nav> -->
+
         <nav class="navbar navbar-light bg-light">
+            <span id="user-token" class="username"></span>
             <form id="artist-search" class="form-inline">
                 <input id="artist" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                    My Favorites
-                </button>
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
             </form>
-            <span id="user-token"></span>
         </nav>
+
     </header>
 
     <section>
-        <div class="jumbotron">
+        <!-- <div class="jumbotron">
             <h1 class="display-4 text-center">Hello, world!</h1>
             <p class="lead text-center">This is a simple music app. To get started, type an artists name in the search
                 field above
             </p>
             <hr class="my-4">
             <p class="text-center">Select a song to see more options!</p>
-            <a class="btn btn-primary btn-lg" href="login.html" role="button">Login</a>
+        </div> -->
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4 text-center">tuneDiddy</h1>
+                <p class="lead text-center">This is a simple music app. To get started, type an artists name in the
+                    search field above!
+                </p>
+                <p class="text-center">Login in to see your profile!</p>
+                <a class="btn btn-primary btn-lg btn-block" href="login.html" role="button">Login</a>
+            </div>
         </div>
     </section>
 

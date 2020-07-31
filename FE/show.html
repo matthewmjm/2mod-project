@@ -9,14 +9,44 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style type="text/css">
         body {
-            background-image: url(pics/71yzQ1sxDML._AC_SL1001_.jpg);
+            background-image: url(pics/music-hero2.jpg);
             background-size: cover;
             background-attachment: fixed;
+        }
+
+        .cover-art {
+            border-radius: 25px;
+            margin: 10px;
+        }
+
+        .username {
+            font-size: 1.5em;
         }
     </style>
 </head>
 
 <body>
+    <header>
+        <!-- <nav class="navbar navbar-light bg-light">
+            <form id="artist-search" class="form-inline">
+                <input id="artist" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                    My Favorites
+                </button>
+            </form>
+            <span id="user-token"></span>
+        </nav> -->
+
+        <nav class="navbar navbar-light bg-light">
+            <span id="user-token" class="username"></span>
+            <form id="artist-search" class="form-inline">
+                <input id="artist" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+    </header>
+
     <div class="container">
         <div class="row" style="text-align: center;">
             <div class="col-12">

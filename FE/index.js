@@ -4,7 +4,6 @@ const userToken = document.getElementById('user-token')
 console.log(userToken)
 
 const user = JSON.parse(localStorage.getItem('token'))
-// console.log(token)
 userToken.innerText = `${user.token.split('-')[1]}`
 
 artistSearch.onsubmit = function (e) {

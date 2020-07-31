@@ -4,6 +4,11 @@ let song = {}
 
 const modalBody = document.querySelector(".modal-body")
 
+const userToken = document.getElementById('user-token')
+const user = JSON.parse(localStorage.getItem('token'))
+userToken.innerText = `${user.token.split('-')[1]}`
+
+
 fetch(`https://deezerdevs-deezer.p.rapidapi.com/track/${id}`, {
     method: 'GET',
     headers: {
@@ -17,7 +22,7 @@ fetch(`https://deezerdevs-deezer.p.rapidapi.com/track/${id}`, {
 function renderTrack(track) {
     const trackTitle = document.getElementById('track-title')
     trackTitle.innerText = `Song Name: ${track.title}`
-    trackTitle.style.color = "white"
+    trackTitle.style.color = "deeppink"
 
     const preview = document.getElementById('track-preview')
     preview.setAttribute('src', track.preview)
@@ -26,15 +31,16 @@ function renderTrack(track) {
 
     const coverArt = document.getElementById('track-cover')
     coverArt.setAttribute('src', track.album.cover_big)
+    coverArt.classList.add('cover-art')
 
 
     song = track
     // console.log(track)
 }
 const favoriteButton = document.querySelector('.favorite-button')
-
 favoriteButton.addEventListener("click", (e) => {
     e.preventDefault()
+
     const user = JSON.parse(localStorage.getItem('token'))
 
     fetch(`http://localhost:3000/song`, {
@@ -71,12 +77,27 @@ myFavoritesButton.addEventListener("click", (e) => {
 
         .then(response => response.json())
         .then(favorites => {
-            favorites.song.forEach(song => {
+            // favorites.song.reverse()
+            favorites.song.reverse().forEach(song => {
+                const $container = document.createElement('div')
                 const $h5 = document.createElement('h5')
                 const img = document.createElement('img')
-                img.setAttribute('src', song.album_cover)
-                $h5.innerHTML = `<a href="show.html?id=${song.track_id}">Song: ${song.title_short}</a >`
-                modalBody.append($h5, img)
+
+                $container.innerHTML = `
+                    <div style="display: flex; align-items: center; margin: 10px;">
+                        <img src="${song.album_cover}" style="margin: 5px;">
+                        <h5><a href="show.html?id=${song.track_id}">Song: ${song.title_short}</a ></h5>
+                    </div>
+                `
+
+                // img.setAttribute('src', song.album_cover)
+                // $h5.innerHTML = `<a href="show.html?id=${song.track_id}">Song: ${song.title_short}</a >`
+                modalBody.append($container)
             })
         })
+
 })
+
+
+
+// cartItems.findIndex(item => item.menuItemId === menuItem.id)
