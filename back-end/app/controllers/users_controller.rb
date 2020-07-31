@@ -6,8 +6,9 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find(params["id"])
-        render json: @user, include: [:songs]
+        # @user = User.find(params["id"])
+        # render json: @user, include: [:songs]
+        p params
     end 
     
     def create
@@ -17,6 +18,14 @@ class UsersController < ApplicationController
         )
         render json: @user
     end 
+
+    def login
+        @user = User.where(user_name: params[:username])
+         #TODO string comparison for password validation   
+        # if @user === params[:password]
+            # p @user['user_password']
+        render json: {status: 'success', user: @user}
+    end
 
     # def update
     #     @user = User.find(params[:id])

@@ -10,6 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_07_30_140054) do
 
+  create_table "songlists", force: :cascade do |t|
+    t.string "list_name"
+    t.integer "user_id", null: false
+    t.integer "song_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["song_id"], name: "index_songlists_on_song_id"
+    t.index ["user_id"], name: "index_songlists_on_user_id"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.integer "track_id"
+    t.string "title_short"
+    t.string "artist_name"
+    t.integer "user_id"
+    t.string "album_cover"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "user_name"
+    t.string "user_password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "songlists", "songs"
+  add_foreign_key "songlists", "users"
 end

@@ -3,11 +3,11 @@
 
 let body = { list_name: 'list_name', user_id: 1, song_id: 1 }
 
-// renderTrack.onsubmit = function (e) {
-//     e.preventDefault()
-//     const addFavorite = document.getElementById('track-title').value
-//     getArtistsTracks(addFavorite)
-// }
+renderTrack.onsubmit = function (e) {
+    e.preventDefault()
+    const addFavorite = document.getElementById('track-title').value
+    getArtistsTracks(addFavorite)
+}
 fetch('http://localhost:3000/songlists', {
 
     method: "POST",

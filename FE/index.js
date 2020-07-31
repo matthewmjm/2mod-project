@@ -1,5 +1,11 @@
 const trackList = document.getElementById('track-list')
 const artistSearch = document.getElementById('artist-search')
+const userToken = document.getElementById('user-token')
+console.log(userToken)
+
+const user = JSON.parse(localStorage.getItem('token'))
+// console.log(token)
+userToken.innerText = `${user.token.split('-')[1]}`
 
 artistSearch.onsubmit = function (e) {
 	e.preventDefault()
@@ -13,12 +19,12 @@ function dataHandler(tracks) {
 
 
 		cardTemplate.innerHTML = `
-			<div class="col-4">
-				<div class="card" style="width: 18rem;">
+			<div class="col-4 mb-2">
+				<div class="card" style="width: 21rem;">
 					<img src="${track.album.cover_medium}" class="card-img-top" alt="album cover">
 						<div class="card-body">
 							
-							<h6 class="card-title">${track.title}</h6>
+							<h6 class="card-title">${formatTitle(track.title)}</h6>
 							<a href="show.html?id=${track.id}" class="btn btn-primary">Song Info</a>
 							<a href="albumshow.html?id=${track.album.id}" class="btn btn-primary">Album Info</a>
 						</div>
@@ -39,4 +45,14 @@ function getArtistsTracks(artistName) {
 	})
 		.then((response) => response.json())
 		.then(result => dataHandler(result))
+}
+
+function formatTitle(title) {
+	let newTitle = " "
+	if (title.length >= 10) {
+		newTitle = `${title.slice(0, 30)}...`
+	} else {
+		newTitle = title
+	}
+	return newTitle
 }

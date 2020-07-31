@@ -25,6 +25,23 @@ class SongsController < ApplicationController
         render json: @song
     end 
 
+    def favorite 
+        @song = Song.create(
+            track_id: params["track_id"],
+            title_short: params["title_short"],
+            artist_name: params["artist_name"],
+            user_id: params["user_id"],
+            album_cover: params["album_cover"]
+        )
+        render json: {status: 'success', song: @song}
+    end
+
+    def songlist
+        
+        @songlist = Song.where(user_id: params['id'] )
+        render json: {status: 'success', song: @songlist} 
+    end
+
     # def update
     #     @song = Song.find(params[:id])
     #     @song.update(

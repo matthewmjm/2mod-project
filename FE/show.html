@@ -17,15 +17,47 @@
 </head>
 
 <body>
-    <h2 id="track-title"></h2>
-    <img id="track-cover">
-    <br />
-    <audio id="track-preview" controls style="width: 500px; height: 38px;"></audio>
-    <br />
-    <!-- <button id="home-page" type="button" class="btn btn-primary btn-lg btn-block">Return to Homepage</button> -->
-    <a href="/" class="btn btn-primary btn-lg ">Return to Homepage</a>
-    <a href="./favorite.html" class="btn btn-primary btn-lg ">Add to Favorites</a>
+    <div class="container">
+        <div class="row" style="text-align: center;">
+            <div class="col-12">
 
+                <h2 id="track-title"></h2>
+                <img id="track-cover">
+                <br />
+                <audio id="track-preview" controls style="width: 500px; height: 38px;"></audio>
+                <br />
+                <!-- <button id="home-page" type="button" class="btn btn-primary btn-lg btn-block">Return to Homepage</button> -->
+                <a href="/" class="btn btn-primary">Return to Homepage</a>
+                <button id="favorite-button" class="favorite-button btn btn-primary">Add to Favorites</button>
+                <button id="my-favorites" type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target="#exampleModalLong">
+                    My Favorites
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">My Favorites</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -36,6 +68,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="show.js"></script>
+    <!-- <script src="index.js"></script> -->
 </body>
 
 
